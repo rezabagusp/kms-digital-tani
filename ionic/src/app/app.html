@@ -1,0 +1,22 @@
+<ion-split-pane>
+  <ion-menu [content]="content">
+
+    <ion-content>
+      <ion-card class="custom-card image-bg">
+        <img src="assets/imgs/pp.jpg" class="custom-avatar" (click)="openProfile()"/>           
+        <div class="image-title">Reza Bagus Permana</div>
+        <div class="image-subtitle">@reza_bagusp</div>
+      </ion-card>
+
+      <ion-list>
+
+        <button ion-item menuClose *ngFor="let item of menuItems" (click)= "openPage(item)">
+          <ion-icon name="{{item.icon}}"></ion-icon> <span style="padding-left:2em">{{ item.name }}</span> 
+        </button>
+      
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>

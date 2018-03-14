@@ -1,0 +1,16 @@
+<ion-header no-shadow no-border>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle color="light">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <super-tabs [config]="{ sideMenu: 'left' }" toolbarColor="light" toolbarBackground="primary" indicatorColor="secondary" badgeColor="secondary">
+    <ng-container *ngFor="let tab of tabs">
+      <super-tab [root]="tab.page" title="{{tab.title}}"></super-tab>
+    </ng-container>
+  </super-tabs>  
+</ion-content>
